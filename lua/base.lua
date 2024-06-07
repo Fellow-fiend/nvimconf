@@ -7,8 +7,6 @@ opt.softtabstop = 4
 opt.tabstop = 4
 opt.shiftwidth = 4
 
-opt.colorcolumn = '120'
-
 opt.number = true
 opt.relativenumber = true
 
