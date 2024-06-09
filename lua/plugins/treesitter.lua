@@ -4,7 +4,6 @@ return {
   -- syntax highlighting.
   {
     "nvim-treesitter/nvim-treesitter",
-    version = false, -- last release is way too old and doesn't work on Windows
     build = ":TSUpdate",
     event = { "BufReadPost", "BufWritePost", "BufNewFile", "VeryLazy" },
     lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
@@ -28,7 +27,7 @@ return {
     opts = {
       highlight = { enable = true },
       indent = { enable = true },
-      auto_install = true,
+      auto_install = false,
       ensure_installed = {
         "bash",
         "c",
@@ -68,15 +67,15 @@ return {
     ---@param opts TSConfig
     config = function(_, opts)
       if type(opts.ensure_installed) == "table" then
-	local uniqopts = {};
-	local seen = {}
-	for _, val in ipairs(opts) do
-		if not seen[val] then
-			table.insert(uniqopts, val)
-			seen[val] = true
-		end
-	end
-        opts.ensure_installed = opts
+        local uniqopts = {};
+        local seen = {}
+        for _, val in ipairs(opts) do
+            if not seen[val] then
+                table.insert(uniqopts, val)
+                seen[val] = true
+            end
+        end
+        opts.ensure_installed = uniqopts
       end
       require("nvim-treesitter.configs").setup(opts)
     end,
