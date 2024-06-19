@@ -21,5 +21,10 @@ opt.listchars = 'trail:␣,tab:>>,nbsp:~,multispace:   |'
 
 opt.nrformats = 'alpha,bin,octal,hex'
 
+opt.undodir = vim.fn.expand("$HOME/.local/state/nvim/undodir")
+opt.undofile = true
+
 g.mapleader = ' '
 g.maplocalleader = '\\'
+
+vim.cmd([[au BufWritePost *.c,*.cpp,*.h silent! !ctags --kinds-="*" R &]])
