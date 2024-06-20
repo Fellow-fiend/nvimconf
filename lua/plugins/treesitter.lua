@@ -81,6 +81,27 @@ return {
         end,
     },
 
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        event = {"BufReadPost", "BufWritePost", "BufNewFile"},
+        cmd = { "TSContextEnable", "TSContextToggle" },
+        opts = {
+            enable = true,
+            max_lines = 2,
+            min_window_height = 0,
+            line_numbers = true,
+            multiline_threshold = 20,
+            trim_scope = 'inner',
+            mode = 'cursor',
+            separator = nil,
+            zindex = 20,
+            on_attach = nil
+        },
+        config = function(_, opts)
+            require("treesitter-context").setup(opts)
+        end
+    },
+
     -- Automatically add closing tags for HTML and JSX
     {
         "windwp/nvim-ts-autotag",

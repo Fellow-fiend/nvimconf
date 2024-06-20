@@ -24,6 +24,8 @@ opt.nrformats = 'alpha,bin,octal,hex'
 opt.undodir = vim.fn.expand("$HOME/.local/state/nvim/undodir")
 opt.undofile = true
 
+opt.foldmethod = manual
+
 g.mapleader = ' '
 g.maplocalleader = '\\'
 
