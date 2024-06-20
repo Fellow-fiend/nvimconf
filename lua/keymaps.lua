@@ -11,3 +11,6 @@ vim.keymap.set({'n', 'v'}, '<Leader>P', '"+P')
 
 vim.keymap.set('v', 'J', 'inoremap <c-j> <Esc>:m .+1<CR>==gi')
 vim.keymap.set('v', 'K', 'inoremap <c-j> <Esc>:m .-2<CR>==gi')
+
+vim.keymap.set('n', '<Leader>,', ':vertical resize -5<CR>')
+vim.keymap.set('n', '<Leader>.', ':vertical resize +5<CR>')
