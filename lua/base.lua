@@ -30,3 +30,4 @@ g.mapleader = ' '
 g.maplocalleader = '\\'
 
 vim.cmd([[au BufWritePost *.c,*.cpp,*.h silent! !ctags --kinds-="*" R &]])
+vim.cmd([[autocmd VimResized * exe "normal \<c-w>="]])
