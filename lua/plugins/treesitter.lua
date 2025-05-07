@@ -53,6 +53,8 @@ return {
                 "vimdoc",
                 "xml",
                 "yaml",
+                "vue",
+                "ejs",
             },
             incremental_selection = {
                 enable = true,
